@@ -1,0 +1,68 @@
+User Signup
+
+curl --location --request POST 'localhost:3000/signup' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email":"manasa.jangiti3@kore.com",
+    "fname":"Manasa",
+    "lname":"Jangiti",
+    "DOB":"1992-06-28",
+    "password":"Kore@123"
+}'
+
+User Login
+
+curl --location --request POST 'localhost:3000/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email":"manasa.jangiti3@kore.com",
+    "password":"Kore@123"
+}'
+
+
+User create topic
+
+curl --location --request POST 'localhost:3000/tryjeeves/topics' \
+--header 'token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYxNzU0ZTQwYjBiNDk3Yzk5MTc0MmNmZSIsImNyZWF0ZWRvbiI6IjIwMjEtMTAtMjRUMTI6MTQ6NTYuNDUxWiIsInVzZXJJZCI6InUtNGI2NTFlY2UtMzhlNC00MDNjLWJiMzctMGRlMWRlODAzODg0IiwiZW1haWwiOiJtYW5hc2EuamFuZ2l0aTNAa29yZS5jb20iLCJmbmFtZSI6Ik1hbmFzYSIsImxuYW1lIjoiSmFuZ2l0aSIsInBhc3N3b3JkIjoiJDJiJDEwJE9MVXFUYXZKMmx6UTZnQkt6c2pEMGVCa20wRXdQeXFFMVkuQjk4cTNYY1J6dm9xUVo5OENxIiwiRE9CIjoiMTk5Mi0wNi0yOFQwMDowMDowMC4wMDBaIiwiX192IjowfSwiaWF0IjoxNjM1MTUxMzc5LCJleHAiOjE2MzUyMzc3Nzl9.8RaG-mc3B7h1g9daNEYB-Vpv5-uC4UkUkyrc7pRd-l4' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "createdBy":"u-e4f31a00-ca0f-44fd-b9d8-840eb67b780f",
+  "title":"topic4 by Manasa test"
+}'
+
+User create post under topic
+
+curl --location --request POST 'localhost:3000/tryjeeves/posts?topicId=tp-ff996ab9-5ff6-4e8e-89aa-62c758a0ede4' \
+--header 'token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYxNzU0ZTQwYjBiNDk3Yzk5MTc0MmNmZSIsImNyZWF0ZWRvbiI6IjIwMjEtMTAtMjRUMTI6MTQ6NTYuNDUxWiIsInVzZXJJZCI6InUtNGI2NTFlY2UtMzhlNC00MDNjLWJiMzctMGRlMWRlODAzODg0IiwiZW1haWwiOiJtYW5hc2EuamFuZ2l0aTNAa29yZS5jb20iLCJmbmFtZSI6Ik1hbmFzYSIsImxuYW1lIjoiSmFuZ2l0aSIsInBhc3N3b3JkIjoiJDJiJDEwJE9MVXFUYXZKMmx6UTZnQkt6c2pEMGVCa20wRXdQeXFFMVkuQjk4cTNYY1J6dm9xUVo5OENxIiwiRE9CIjoiMTk5Mi0wNi0yOFQwMDowMDowMC4wMDBaIiwiX192IjowfSwiaWF0IjoxNjM1MTUxMzc5LCJleHAiOjE2MzUyMzc3Nzl9.8RaG-mc3B7h1g9daNEYB-Vpv5-uC4UkUkyrc7pRd-l4' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "title":"post57",
+    "createdBy":"u-e4f31a00-ca0f-44fd-b9d8-840eb67b780f",
+    "topicId":"tp-ff996ab9-5ff6-4e8e-89aa-62c758a0ede4"
+}'
+
+User create comments for a post
+
+curl --location --request POST 'localhost:3000/tryjeeves/comments' \
+--header 'token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYxNzU0ZTQwYjBiNDk3Yzk5MTc0MmNmZSIsImNyZWF0ZWRvbiI6IjIwMjEtMTAtMjRUMTI6MTQ6NTYuNDUxWiIsInVzZXJJZCI6InUtNGI2NTFlY2UtMzhlNC00MDNjLWJiMzctMGRlMWRlODAzODg0IiwiZW1haWwiOiJtYW5hc2EuamFuZ2l0aTNAa29yZS5jb20iLCJmbmFtZSI6Ik1hbmFzYSIsImxuYW1lIjoiSmFuZ2l0aSIsInBhc3N3b3JkIjoiJDJiJDEwJE9MVXFUYXZKMmx6UTZnQkt6c2pEMGVCa20wRXdQeXFFMVkuQjk4cTNYY1J6dm9xUVo5OENxIiwiRE9CIjoiMTk5Mi0wNi0yOFQwMDowMDowMC4wMDBaIiwiX192IjowfSwiaWF0IjoxNjM1MTUxMzc5LCJleHAiOjE2MzUyMzc3Nzl9.8RaG-mc3B7h1g9daNEYB-Vpv5-uC4UkUkyrc7pRd-l4' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "postId":"pt-aab263bb-8eb4-4a47-8e93-dd83f6aa7b5d",
+    "comment":"comment from user1",
+    "userId":"u-e4f31a00-ca0f-44fd-b9d8-840eb67b780f"
+}'
+
+Fetch Topics of a user
+curl --location --request GET 'localhost:3000/tryjeeves/topics/u-e4f31a00-ca0f-44fd-b9d8-840eb67b780f?skip=3&limit=2' \
+--header 'token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYxNzU0ZTQwYjBiNDk3Yzk5MTc0MmNmZSIsImNyZWF0ZWRvbiI6IjIwMjEtMTAtMjRUMTI6MTQ6NTYuNDUxWiIsInVzZXJJZCI6InUtNGI2NTFlY2UtMzhlNC00MDNjLWJiMzctMGRlMWRlODAzODg0IiwiZW1haWwiOiJtYW5hc2EuamFuZ2l0aTNAa29yZS5jb20iLCJmbmFtZSI6Ik1hbmFzYSIsImxuYW1lIjoiSmFuZ2l0aSIsInBhc3N3b3JkIjoiJDJiJDEwJE9MVXFUYXZKMmx6UTZnQkt6c2pEMGVCa20wRXdQeXFFMVkuQjk4cTNYY1J6dm9xUVo5OENxIiwiRE9CIjoiMTk5Mi0wNi0yOFQwMDowMDowMC4wMDBaIiwiX192IjowfSwiaWF0IjoxNjM1MTUxMzc5LCJleHAiOjE2MzUyMzc3Nzl9.8RaG-mc3B7h1g9daNEYB-Vpv5-uC4UkUkyrc7pRd-l4'
+
+
+Fetch Posts of a topic including comments
+curl --location --request GET 'localhost:3000/tryjeeves/posts?topicId=tp-ff996ab9-5ff6-4e8e-89aa-62c758a0ede4&limit=10' \
+--header 'token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYxNzU0ZTQwYjBiNDk3Yzk5MTc0MmNmZSIsImNyZWF0ZWRvbiI6IjIwMjEtMTAtMjRUMTI6MTQ6NTYuNDUxWiIsInVzZXJJZCI6InUtNGI2NTFlY2UtMzhlNC00MDNjLWJiMzctMGRlMWRlODAzODg0IiwiZW1haWwiOiJtYW5hc2EuamFuZ2l0aTNAa29yZS5jb20iLCJmbmFtZSI6Ik1hbmFzYSIsImxuYW1lIjoiSmFuZ2l0aSIsInBhc3N3b3JkIjoiJDJiJDEwJE9MVXFUYXZKMmx6UTZnQkt6c2pEMGVCa20wRXdQeXFFMVkuQjk4cTNYY1J6dm9xUVo5OENxIiwiRE9CIjoiMTk5Mi0wNi0yOFQwMDowMDowMC4wMDBaIiwiX192IjowfSwiaWF0IjoxNjM1MTYyOTg0LCJleHAiOjE2MzUyNDkzODR9.Wv7tmYb-v8kaGVKZtPwLQcqWB_u7oZsdicaFKH_GqC4' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "title":"post57",
+    "createdBy":"u-e4f31a00-ca0f-44fd-b9d8-840eb67b780f",
+    "topicId":"tp-ff996ab9-5ff6-4e8e-89aa-62c758a0ede4"
+}'
